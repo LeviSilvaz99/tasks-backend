@@ -1,5 +1,5 @@
 pipeline {
-    agent any {
+        agent any 
         stages {
             stage ('Just Test'){
                 steps {
@@ -7,5 +7,5 @@ pipeline {
                 }
             }
         }
-    }
+    
 }
