@@ -39,7 +39,7 @@ pipeline {
             
         }
         post {
-            aways {
+            always {
                 junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml, APITet/target/surefire-reports/*.xml'
             }
         }
