@@ -13,7 +13,7 @@ pipeline {
             }
             stage ('Deploy Backend'){
                 steps {
-                    git 'https://github.com/LeviSilvaz99/tasks-backend.git'
+                    git 'https://github.com/LeviSilvaz99/tasks-backend.git '
                     deploy adapters: [tomcat8(credentialsId: 'TomcatLogin', path: '', url: 'http://localhost:8001/')], contextPath: 'tasks-backend', war: 'target/tasks-backend.war'
                 }
             }
@@ -37,6 +37,11 @@ pipeline {
                 }
             }
             
+        }
+        post {
+            aways{
+                junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml, api-test/target/surefire-reports/*.xml'
+            }
         }
     
 }
