@@ -25,6 +25,7 @@ pipeline {
                    
                 }
             }
+
             stage ('Deploy Frontend'){
                 steps {
                     dir('frontend'){
@@ -40,4 +41,3 @@ pipeline {
 }
 
 
-https://github.com/LeviSilvaz99/tasks-frontend.git
